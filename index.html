@@ -2,80 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>eEducate.lk – Contact Us</title>
+  <title>eEducate.lk</title>
   <style>
-    body { font-family: sans-serif; margin: 20px; }
-    .contact-block { margin-bottom: 40px; }
-    a.whatsapp-button {
-      position: fixed; bottom: 20px; right: 20px;
-      background-color: #25D366; color: white;
-      padding: 15px; border-radius: 50px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      text-decoration: none; font-size: 16px; z-index: 1000;
+    body { margin:0; font-family: sans-serif; color:#333; }
+    header { background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
+    .logo { max-width:200px; margin:10px; }
+    nav { display:flex; justify-content:center; gap:30px; padding:15px; }
+    nav a {
+      text-decoration:none; font-size:18px; color:#555;
+      position:relative; padding:5px;
+      transition: color 0.3s;
     }
-    .social-widgets { display: flex; flex-wrap: wrap; gap: 20px; }
-    .widget { flex: 1; min-width: 300px; }
+    nav a::after {
+      content:''; position:absolute; left:0; bottom:0; height:3px;
+      width:0; background:#0072ce; transition: width 0.3s;
+    }
+    nav a:hover { color:#0072ce; }
+    nav a:hover::after { width:100%; }
+    section { padding:60px 20px; max-width:1000px; margin:0 auto; display:none; }
+    section.active { display:block; animation: fadeIn 0.6s ease-in; }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    .social-widgets { display:flex; flex-wrap:wrap; gap:20px; margin-top:40px; }
+    .widget { flex:1; min-width:300px; }
+    .whatsapp-button {
+      position:fixed; bottom:20px; right:20px;
+      background:#25D366; color:white; padding:15px; border-radius:50px;
+      text-decoration:none; font-size:16px; box-shadow:0 4px 8px rgba(0,0,0,0.2); z-index:1000;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Contact Us / අප අමතන්න / எங்களை தொடர்புகொள்ளவும்</h1>
-  <div class="contact-block">
-    <p><strong>Email:</strong> eeducate.lk@gmail.com<br>
-       <strong>Phone:</strong> 071 083 0031<br>
-       <strong>Address:</strong> 130/A, New Kandy Road, Kothalawala, Kaduwela, Colombo, Sri Lanka.</p>
+<header>
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQdukUN1xt6cylDW-TIExSMd-9koCZt6GYFPbhx_XXxRLJAGX_9Wd8l4aGfbz-ez_faNwS3-3qIyKcNbuBsWp72GFdlLx9vy4f1HdZ9H_eizeecsp78Tq3_ntsiIgUkvhMmNoFdfVYBlFUycyR-8gs0GC5bFFzKeXVwoHNbc2gvze_Ju35p5F6_CF4feoR/s320/eEducate.lk%20logo%20trance%20banner.png" alt="eEducate.lk" class="logo">
+  <nav>
+    <a href="#home" data-target="home">Home</a>
+    <a href="#about" data-target="about">About Us</a>
+    <a href="#contact" data-target="contact">Contact Us</a>
+  </nav>
+</header>
 
-    <h2>සිංහල – අප අමතන්න</h2>
-    <p>විද්‍යුත් තැපෑල: eeducate.lk@gmail.com<br>
-       දුරකථනය: 071 083 0031<br>
-       ලිපිනය: 130/A, නව කෑගල්ල පාර, කොතලාවල, කඩුවෙල, කොළඹ, ශ්‍රී ලංකාව.</p>
+<section id="home" class="active">
+  <h1>Welcome to eEducate.lk</h1>
+  <p>Your trusted Sri Lankan educational platform committed to helping students learn smarter and achieve more.</p>
+</section>
 
-    <h2>தமிழ் – எங்களை தொடர்புகொள்ளவும்</h2>
-    <p>மின்னஞ்சல்: eeducate.lk@gmail.com<br>
-       தொலைபேசி: 071 083 0031<br>
-       முகவரி: 130/A, புதிய கண்டி சாலை, கொத்தலாவளை, கடுவெல, கொழும்பு, இலங்கை.</p>
-  </div>
+<section id="about">
+  <h2>About Us</h2>
+  <p>At eEducate.lk, we support Grade 6 to A/L students with high-quality, locally relevant resources: video tutorials, past paper discussions, and career guidance.</p>
+</section>
 
-  <!-- Facebook Page Plugin -->
-  <div class="widget">
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" 
-      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0"></script>
-    <div class="fb-page"
-         data-href="https://www.facebook.com/eeducate.lk"
-         data-tabs="timeline"
-         data-width=""
-         data-height=""
-         data-small-header="false"
-         data-adapt-container-width="true"
-         data-hide-cover="false"
-         data-show-facepile="true">
-      <blockquote cite="https://www.facebook.com/eeducate.lk"
-                  class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/eeducate.lk">eEducate.lk</a>
-      </blockquote>
+<section id="contact">
+  <h2>Contact Us / අප අමතන්න / எங்களை தொடர்புகொள்ளவும்</h2>
+  <p><strong>Email:</strong> eeducate.lk@gmail.com<br>
+     <strong>Phone:</strong> 071 083 0031<br>
+     <strong>Address:</strong> 130/A, New Kandy Road, Kothalawala, Kaduwela, Colombo, Sri Lanka.</p>
+
+  <h3>සිංහල – අප අමතන්න</h3>
+  <p>විද්‍යුත් තැපෑල: eeducate.lk@gmail.com<br>
+     දුරකථනය: 071 083 0031<br>
+     ලිපිනය: 130/A, නව කෑගල්ල පාර, කොතලාවල, කඩුවෙල, කොළඹ, ශ්‍රී ලංකාව.</p>
+
+  <h3>தமிழ் – எங்களை தொடர்புகொள்ளவும்</h3>
+  <p>மின்னஞ்சல்: eeducate.lk@gmail.com<br>
+     தொலைபேசி: 071 083 0031<br>
+     முகவரி: 130/A, புதிய கண்டி சாலை, கொத்தலாவளை, கடுவெல, கொழும்பு, இலங்கை.</p>
+
+  <div class="social-widgets">
+    <div class="widget">
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0"></script>
+      <div class="fb-page"
+           data-href="https://www.facebook.com/eeducate.lk"
+           data-tabs="timeline"
+           data-adapt-container-width="true"
+           data-hide-cover="false"
+           data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/eeducate.lk"
+                    class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/eeducate.lk">eEducate.lk</a>
+        </blockquote>
+      </div>
+    </div>
+    <div class="widget">
+      <h3>Subscribe on YouTube</h3>
+      <iframe width="100%" height="315"
+              src="https://www.youtube.com/embed?listType=user_uploads&list=eeducatelk"
+              title="YouTube channel"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </div>
   </div>
+</section>
 
-  <!-- YouTube Channel Embed -->
-  <div class="widget">
-    <h3>Subscribe on YouTube</h3>
-    <iframe width="100%" height="315"
-            src="https://www.youtube.com/embed?listType=user_uploads&list=eeducatelk"
-            title="YouTube channel of eEducate.lk"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-    </iframe>
-  </div>
+<a class="whatsapp-button"
+   href="https://wa.me/94710830031?text=Hello%20eEducate.lk,%20I%20would%20like%20to%20learn%20more%20about%20your%20services."
+   target="_blank" title="Chat with us on WhatsApp">
+  💬 WhatsApp Us
+</a>
 
-  <!-- WhatsApp Click-to-Chat Button -->
-  <a class="whatsapp-button"
-     href="https://wa.me/94710830031?text=Hello%20eEducate.lk,%20I%20would%20like%20to%20learn%20more%20about%20your%20services."
-     target="_blank"
-     title="Chat with us on WhatsApp">
-    💬 WhatsApp Us
-  </a>
+<script>
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(a.dataset.target).classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>
