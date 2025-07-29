@@ -1,16 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eEducate.lk – Contact Us</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-    h1 { color: #333; }
+    body { font-family: sans-serif; margin: 20px; }
+    .contact-block { margin-bottom: 40px; }
+    a.whatsapp-button {
+      position: fixed; bottom: 20px; right: 20px;
+      background-color: #25D366; color: white;
+      padding: 15px; border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-decoration: none; font-size: 16px; z-index: 1000;
+    }
+    .social-widgets { display: flex; flex-wrap: wrap; gap: 20px; }
+    .widget { flex: 1; min-width: 300px; }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Website!</h1>
-  <p>This site is hosted for free with GitHub Pages.</p>
+
+  <h1>Contact Us / අප අමතන්න / எங்களை தொடர்புகொள்ளவும்</h1>
+  <div class="contact-block">
+    <p><strong>Email:</strong> eeducate.lk@gmail.com<br>
+       <strong>Phone:</strong> 071 083 0031<br>
+       <strong>Address:</strong> 130/A, New Kandy Road, Kothalawala, Kaduwela, Colombo, Sri Lanka.</p>
+
+    <h2>සිංහල – අප අමතන්න</h2>
+    <p>විද්‍යුත් තැපෑල: eeducate.lk@gmail.com<br>
+       දුරකථනය: 071 083 0031<br>
+       ලිපිනය: 130/A, නව කෑගල්ල පාර, කොතලාවල, කඩුවෙල, කොළඹ, ශ්‍රී ලංකාව.</p>
+
+    <h2>தமிழ் – எங்களை தொடர்புகொள்ளவும்</h2>
+    <p>மின்னஞ்சல்: eeducate.lk@gmail.com<br>
+       தொலைபேசி: 071 083 0031<br>
+       முகவரி: 130/A, புதிய கண்டி சாலை, கொத்தலாவளை, கடுவெல, கொழும்பு, இலங்கை.</p>
+  </div>
+
+  <!-- Facebook Page Plugin -->
+  <div class="widget">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0"></script>
+    <div class="fb-page"
+         data-href="https://www.facebook.com/eeducate.lk"
+         data-tabs="timeline"
+         data-width=""
+         data-height=""
+         data-small-header="false"
+         data-adapt-container-width="true"
+         data-hide-cover="false"
+         data-show-facepile="true">
+      <blockquote cite="https://www.facebook.com/eeducate.lk"
+                  class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/eeducate.lk">eEducate.lk</a>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- YouTube Channel Embed -->
+  <div class="widget">
+    <h3>Subscribe on YouTube</h3>
+    <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed?listType=user_uploads&list=eeducatelk"
+            title="YouTube channel of eEducate.lk"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- WhatsApp Click-to-Chat Button -->
+  <a class="whatsapp-button"
+     href="https://wa.me/94710830031?text=Hello%20eEducate.lk,%20I%20would%20like%20to%20learn%20more%20about%20your%20services."
+     target="_blank"
+     title="Chat with us on WhatsApp">
+    💬 WhatsApp Us
+  </a>
+
 </body>
 </html>
