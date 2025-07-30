@@ -3,62 +3,56 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>eEducate.lk</title>
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {--silver-bg:#edf2f7;--silver-dark:#c3c8d0;--sky:#0096ff;--accent:#005bb5;}
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'Roboto',sans-serif; background:var(--silver-bg); color:#222;}
-    header { background:linear-gradient(180deg,#fff,var(--silver-dark)); position:sticky; top:0; z-index:100; text-align:center; padding:10px; position: relative;}
-    header img { max-width:220px; }
-    nav { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:15px 0; }
-    nav a { display:flex; align-items:center; gap:6px; font-size:18px; padding:5px; color:#444; text-decoration:none; position:relative; font-weight:600; transition:color .3s;}
-    nav a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:3px; background:var(--sky); transition:width .3s; }
-    nav a:hover { color:var(--sky); } nav a:hover::after { width:100%; }
-    section { max-width:900px; margin:0 auto; padding:60px 20px; display:none; opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
-    section.active { display:block; opacity:1; transform:translateY(0); }
-    h1,h2 { color:var(--sky); font-weight:600; margin-bottom:20px; }
-    p, ul { line-height:1.6; margin-bottom:15px; }
-    ul { margin-left:1em; }
-    .timer { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin:40px 0; }
-    .counter { background:#fff; padding:20px; border-radius:8px; width:180px; text-align:center; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
-    .counter h3 { font-size:1em; color:var(--accent); margin-bottom:10px; }
-    .counter .count { font-size:2em; color:var(--sky); letter-spacing:1px; transition:transform .3s; }
-    .register-msg { text-align:center; font-size:1.2em; color:var(--accent); margin-top:20px; }
-
-    .social { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:40px; }
-    .widget { flex:1; min-width:280px; max-width:350px; background:#fff; padding:20px; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1); animation: fadeIn 1s ease-in-out both; }
-    .widget:nth-child(2) { animation-delay:0.3s; }
-
-    a.whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; padding:15px 20px; border-radius:50px; font-size:18px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.2); transition:transform .3s; }
-    a.whatsapp:hover { transform: rotate(10deg) scale(1.1); }
-    footer { background:var(--silver-dark); color:#333; text-align:center; padding:20px; position:relative; overflow:hidden; margin-top:40px;}
-    footer::before { content:''; position:absolute; top:-20px; left:0; width:100%; height:40px; background:var(--sky); animation:wave 6s infinite linear; opacity:.3; }
-    @keyframes wave { from{transform:translateX(-100%);} to{transform:translateX(100%);} }
-
-    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
+    * {box-sizing:border-box;margin:0;padding:0;}
+    body {background:var(--silver-bg);color:#222;font-family:'Roboto',sans-serif;}
+    header {position:sticky;top:0;background:linear-gradient(180deg,#fff,var(--silver-dark));padding:10px;text-align:center;z-index:100;position: relative;}
+    header img {max-width:220px;}
+    header select {position:absolute;top:10px;right:20px;padding:4px;border-radius:6px;font-weight:bold;}
+    nav {display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:15px 0;}
+    nav a {display:flex;align-items:center;gap:6px;font-size:18px;padding:5px;color:#444;text-decoration:none;position:relative;font-weight:600;transition:color .3s;}
+    nav a:hover {color:var(--sky);} nav a::after {content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--sky);transition:width .3s;} nav a:hover::after {width:100%;}
+    section {max-width:900px;margin:0 auto;padding:60px 20px;display:none;opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s;}
+    section.active {display:block;opacity:1;transform:translateY(0);}
+    h1,h2 {color:var(--sky);font-weight:600;margin-bottom:20px;}
+    p,ul {line-height:1.6;margin-bottom:15px;} ul {margin-left:1em;}
+    .timer {display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:40px 0;}
+    .counter {background:#fff;padding:20px;border-radius:8px;width:180px;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,0.12);}
+    .counter h3{font-size:1em;color:var(--accent);margin-bottom:10px;}
+    .counter .count{font-size:2em;color:var(--sky);letter-spacing:1px;transition:transform .3s;}
+    .register-msg{text-align:center;font-size:1.2em;color:var(--accent);margin-top:20px;}
+    .social{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:40px;}
+    .widget{flex:1;min-width:280px;max-width:350px;background:#fff;padding:20px;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.1);animation:fadeIn 1s ease-in-out both;}
+    .widget:nth-child(2){animation-delay:0.3s;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    a.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px 20px;border-radius:50px;font-size:18px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:transform .3s;}
+    a.whatsapp:hover{transform:rotate(10deg) scale(1.1);}
+    footer{background:var(--silver-dark);color:#333;text-align:center;padding:20px;position:relative;margin-top:40px;overflow:hidden;}
+    footer::before{content:'';position:absolute;top:-20px;left:0;width:100%;height:40px;background:var(--sky);animation:wave 6s infinite linear;opacity:.3;}
+    @keyframes wave{from{transform:translateX(-100%);}to{transform:translateX(100%);}}
     html[lang="si"] .en, html[lang="ta"] .en,
     html[lang="en"] .si, html[lang="ta"] .si,
-    html[lang="en"] .ta, html[lang="si"] .ta { display: none; }
-
-    .sinhala { font-family:'Noto Sans Sinhala',sans-serif; }
-    .tamil { font-family:'Noto Sans Tamil',sans-serif; }
+    html[lang="en"] .ta, html[lang="si"] .ta{display:none;}
+    .sinhala{font-family:'Noto Sans Sinhala',sans-serif;}
+    .tamil{font-family:'Noto Sans Tamil',sans-serif;}
   </style>
 </head>
 <body>
-
 <header>
-  <img src="https://blogger.googleusercontent.com/img/…/eEducate.lk%20logo.png" alt="eEducate.lk Logo">
-  <div style="position:absolute; top:10px; right:20px;">
-    <select onchange="switchLanguage(this.value)" style="padding:4px; border-radius:6px; font-weight:bold;">
-      <option value="en">English</option>
-      <option value="si">සිංහල</option>
-      <option value="ta">தமிழ்</option>
-    </select>
-  </div>
+  <!-- Replace with your actual banner image URL -->
+  <img src="https://yourdomain.com/path/to/banner.png" alt="eEducate.lk Logo">
+  <select onchange="switchLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="si">සිංහල</option>
+    <option value="ta">தமிழ்</option>
+  </select>
   <nav>
     <a href="#home" data-target="home"><i class="fa-solid fa-house fa-beat"></i><span class="en">Home</span><span class="si sinhala">මුල් පිටුව</span><span class="ta tamil">முகப்பு</span></a>
     <a href="#about" data-target="about"><i class="fa-solid fa-info-circle fa-beat"></i><span class="en">About Us</span><span class="si sinhala">අප ගැන</span><span class="ta tamil">எங்களைப் பற்றி</span></a>
@@ -68,41 +62,46 @@
 
 <section id="home" class="active">
   <h1><span class="en">Welcome to eEducate.lk</span><span class="si sinhala">eEducate.lk වෙත සාදරයෙන් පිළිගනිමු</span><span class="ta tamil">eEducate.lk‑இற்கு வரவேற்கிறோம்</span></h1>
-  <p><span class="en">Your trusted Sri Lankan educational platform...</span><span class="si sinhala">ශ්‍රී ලංකා විශ්වාසදායක අධ්‍යාපන ව්‍යාපෘතිය...</span><span class="ta tamil">உங்கள் நம்பகத்துக்குரிய இலங்கை கல்வி தளம்...</span></p>
+  <p><span class="en">Your trusted Sri Lankan educational platform helping students learn smarter.</span><span class="si sinhala">ශ්‍රී ලංකාවේ සිසුන් සඳහා නව්‍ය අධ්‍යාපන වේදිකාවකි.</span><span class="ta tamil">இலங்கை மாணவர்களுக்கு நம்பகமான கல்வி தளம்.</span></p>
+
+  <div class="timer">
+    <div class="counter" id="counter-al"><h3>GCE A/L Exam</h3><div class="count">–</div></div>
+    <div class="counter" id="counter-ol"><h3>GCE O/L Exam</h3><div class="count">–</div></div>
+    <div class="counter" id="counter-sch"><h3>Scholarship Exam</h3><div class="count">–</div></div>
+  </div>
+  <div class="register-msg"><span class="en">Feel free to contact us now to register!</span><span class="si sinhala">ලියාපදිංචිය සඳහා දැන් අප අමතන්න!</span><span class="ta tamil">பதிவு செய்ய இப்போது தொடர்பு கொள்ளலாம்!</span></div>
 
   <div class="social">
     <div class="widget">
-      <!-- Facebook Page Plugin -->
-      <div id="fb-root"></div><script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0"></script>
-      <div class="fb-page" data-href="https://www.facebook.com/eeducate.lk" data-tabs="timeline" data-hide-cover="false" data-show-facepile="true">
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0"></script>
+      <div class="fb-page"
+           data-href="https://www.facebook.com/eeducate.lk"
+           data-tabs="timeline"
+           data-hide-cover="false"
+           data-show-facepile="true">
         <blockquote cite="https://www.facebook.com/eeducate.lk" class="fb-xfbml-parse-ignore">
           <a href="https://www.facebook.com/eeducate.lk">eEducate.lk</a>
         </blockquote>
       </div>
     </div>
     <div class="widget">
-      <!-- YouTube Subscribe Button -->
-      <h3><i class="fa-brands fa-youtube fa-beat"></i> <span class="en">Subscribe on YouTube</span><span class="si sinhala">YouTube හි දායක වන්න</span><span class="ta tamil">YouTube ஆக சந்தாதாரர்</span></h3>
+      <h3><i class="fa-brands fa-youtube fa-beat"></i><span class="en">Subscribe on YouTube</span><span class="si sinhala">YouTube හි දායක වන්න</span><span class="ta tamil">YouTube ஆக சந்தாதாரர்</span></h3>
       <script src="https://apis.google.com/js/platform.js"></script>
-      <div class="g-ytsubscribe"
-           data-channelid="UC4OdLL2R3_rZXCV35DzvCqw"
-           data-layout="default"
-           data-count="default">
-      </div>
+      <div class="g-ytsubscribe" data-channelid="UC4OdLL2R3_rZXCV35DzvCqw" data-layout="default" data-count="default"></div>
     </div>
   </div>
 </section>
 
 <section id="about">
   <h2><span class="en">About Us</span><span class="si sinhala">අප ගැන</span><span class="ta tamil">எங்களைப் பற்றி</span></h2>
-  <p><span class="en">At eEducate.lk we believe education is the key... </span><span class="si sinhala">eEducate.lk වෙත අපි විශ්වාස කරමු...</span><span class="ta tamil">eEducate.lk இல் கல்வி மிக முக்கியம்...</span></p>
-  <!-- Add multilingual paragraphs similarly -->
+  <p><span class="en">At eEducate.lk, we offer past paper discussions, video tutorials, and career guidance by expert educators.</span><span class="si sinhala">eEducate.lk හි අපි පසුගිය ප්‍රශ්න ලැයිස්තු, වීඩියෝ උපදෙස් සහ වෘත්තීය මාර්ගෝපදේශනය සැපයයි.</span><span class="ta tamil">eEducate.lk இல் நாங்கள் தேர்வு குறிப்புகள், வீடியோ பாடங்கள் மற்றும் தொழில் வழிகாட்டலை வழங்குகிறோம்.</span></p>
 </section>
 
 <section id="contact">
   <h2><span class="en">Contact Us</span><span class="si sinhala">අප අමතන්න</span><span class="ta tamil">எங்களை தொடர்புகொள்ளவும்</span></h2>
-  <p><strong>Email:</strong> eeducate.lk@gmail.com<br><strong>Phone:</strong> 071 083 0031<br><strong>Address:</strong> Colombo, Sri Lanka.</p>
-  <!-- Sinhala & Tamil versions below if desired -->
+  <p><span class="en"><strong>Email:</strong> eeducate.lk@gmail.com<br><strong>Phone:</strong> 071 083 0031<br><strong>Address:</strong> Kaduwela, Colombo, Sri Lanka.</span><span class="si sinhala"><strong>විද්‍යුත් තැපැල:</strong> eeducate.lk@gmail.com<br><strong>දුරකථනය:</strong> 071 083 0031<br><strong>ලිපිනය:</strong> කොළඹ, ශ්‍රී ලංකාව.</span><span class="ta tamil"><strong>மின்னஞ்சல்:</strong> eeducate.lk@gmail.com<br><strong>தொலைபேசி:</strong> 071 083 0031<br><strong>முகவரி:</strong> கொழும்பு, இலங்கை.</span></p>
 </section>
 
 <a class="whatsapp" href="https://wa.me/94710830031?text=Hello%20eEducate.lk" target="_blank">
@@ -122,42 +121,37 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById(link.dataset.target).classList.add('active');
     });
   });
-  function switchLanguage(lang) {
-    document.documentElement.lang = lang;
-    localStorage.setItem("siteLang", lang);
-  }
-  window.onload = () => {
-    const savedLang = localStorage.getItem("siteLang") || "en";
-    document.documentElement.lang = savedLang;
-    document.querySelector("select").value = savedLang;
-  };
-
-  function getNextExamDate(md) {
-    const [m,d] = md.split('-').map(Number), now = new Date();
-    let year = now.getFullYear(), exam = new Date(year, m-1, d);
-    return now > exam ? new Date(year+1, m-1, d) : exam;
-  }
-  function animate(el) {
-    el.style.transform = 'scale(1.1)';
-    setTimeout(() => el.style.transform = 'scale(1)', 300);
-  }
-  function startCountdown(id, md) {
-    const el = document.querySelector(`#${id} .count`);
-    const upd = () => {
-      const diff = getNextExamDate(md) - new Date();
-      if (diff <= 0) { el.textContent = 'Today!'; return; }
-      const d = Math.floor(diff/86400000), h = Math.floor(diff/3600000)%24,
-            m = Math.floor(diff/60000)%60, s = Math.floor(diff/1000)%60;
-      el.textContent = `${d}d ${h}h ${m}m ${s}s`;
-      animate(el);
-    };
-    upd(); setInterval(upd, 1000);
-  }
-  startCountdown('counter-al','11-10');
-  startCountdown('counter-ol','03-17');
-  startCountdown('counter-sch','07-24');
 });
-</script>
 
+function switchLanguage(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem("siteLang", lang);
+}
+window.onload = () => {
+  const saved = localStorage.getItem("siteLang") || "en";
+  document.documentElement.lang = saved;
+  document.querySelector("select").value = saved;
+};
+
+function getNextExamDate(md) {
+  const [m,d]=md.split('-').map(Number), now=new Date();
+  let year=now.getFullYear(), exam=new Date(year, m-1, d);
+  return now>exam? new Date(year+1, m-1, d): exam;
+}
+function animate(el) { el.style.transform='scale(1.1)'; setTimeout(()=>el.style.transform='scale(1)',300);}
+function startCountdown(id,md) {
+  const el=document.querySelector(`#${id} .count`);
+  const upd=()=>{
+    const diff=getNextExamDate(md) - new Date();
+    if(diff<=0){ el.textContent='Today!'; return;}
+    const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60,s=Math.floor(diff/1000)%60;
+    el.textContent=`${d}d ${h}h ${m}m ${s}s`; animate(el);
+  };
+  upd(); setInterval(upd,1000);
+}
+startCountdown('counter-al','11-10');
+startCountdown('counter-ol','03-17');
+startCountdown('counter-sch','07-24');
+</script>
 </body>
 </html>
